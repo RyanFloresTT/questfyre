@@ -9,11 +9,9 @@ void TitleMenu::Enter() {
 }
 
 void TitleMenu::Update(float dt) {
-    if (IsKeyPressed(KEY_SPACE)) {
-        done = true;
-    }
+    player.Update(dt);
 }
 
 void TitleMenu::Draw() {
-    DrawText("Hello World", 10, 10, 20, BLACK);
+    player.Draw();
 }

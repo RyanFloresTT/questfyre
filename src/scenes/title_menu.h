@@ -3,6 +3,7 @@
 //
 #pragma once
 
+#include "../player/player.h"
 #include "lantern/scene/scene.h"
 
 class TitleMenu : public Scene {
@@ -12,4 +13,7 @@ public:
     void Enter() override;
     void Update(float dt) override;
     void Draw() override;
+
+private:
+    Player player;
 };
