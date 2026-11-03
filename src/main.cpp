@@ -10,7 +10,7 @@ int main() {
     //scope.Load<Music>();
     //scope.Load<Texture2D>();
 
-   // const Music& music = scope.Get<Music>();
+    // const Music& music = scope.Get<Music>();
 
     //PlayMusicStream(music);
     //SetMusicVolume(music, 0.1f);

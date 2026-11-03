@@ -8,7 +8,7 @@
 
 class TitleMenu : public Scene {
 public:
-    explicit TitleMenu(AssetStore& asset_store) : Scene(asset_store) {}
+    explicit TitleMenu(AssetStore& asset_store) : Scene(asset_store), player(assets) {}
 
     void Enter() override;
     void Update(float dt) override;

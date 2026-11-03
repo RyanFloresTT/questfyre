@@ -29,3 +29,8 @@ add_executable(questfyre src/main.cpp
         src/helpers/vectors.h)
 
 target_link_libraries(questfyre PRIVATE raylib lantern)
+
+add_custom_command(
+        TARGET questfyre POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:questfyre>/assets)

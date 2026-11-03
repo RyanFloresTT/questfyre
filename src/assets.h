@@ -2,3 +2,7 @@
 #pragma once
 
 #include <string_view>
+
+namespace Assets::Player {
+    inline constexpr std::string_view DEFAULT = "assets/player/default.png";
+}

@@ -1,13 +1,18 @@
 ﻿#pragma once
 #include "raylib.h"
+#include "../assets.h"
+#include "lantern/raii/asset_scope.h"
 
 class Player {
 public:
-    void Update(float dt);
-    void Draw();
+    explicit Player(AssetScope& assets) : assets(assets) {
+        assets.Load<Texture2D>(Assets::Player::DEFAULT);
+    }
+    void     Update(float dt);
+    void     Draw() const;
 
 private:
-    Vector2 movement_direction = {};
+    AssetScope& assets;
     Vector2 position = {};
-    float speed = 20;
+    float speed = 100;
 };
