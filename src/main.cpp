@@ -4,9 +4,6 @@
 
 int main() {
     auto game = Game(1920, 1080, "QuestFyre", 60);
-    AssetStore global_store;
-    AssetScope scope(global_store);
-
     //scope.Load<Music>();
     //scope.Load<Texture2D>();
 

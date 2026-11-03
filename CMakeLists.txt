@@ -25,8 +25,7 @@ add_executable(questfyre src/main.cpp
         src/scenes/title_menu.h
         src/scenes/title_menu.cpp
         src/player/player.cpp
-        src/player/player.h
-        src/helpers/vectors.h)
+        src/player/player.h)
 
 target_link_libraries(questfyre PRIVATE raylib lantern)
 
