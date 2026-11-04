@@ -6,12 +6,10 @@ class Player;
 
 class Enemy : public Entity {
 public:
-    explicit Enemy(AssetScope& assets, Player& player) : Entity(assets), player(player) {
+    explicit Enemy(AssetScope& assets, Player& player, const Vector2 spawn_pos) : Entity(assets), player(player) {
         assets.Load<Texture2D>(Assets::Enemy::CYCLOPS);
 
-        position.x = GetScreenWidth() / 2 + 100;
-        position.y = GetScreenHeight() / 2 + 100;
-
+        position = spawn_pos;
         speed = 100;
     }
 

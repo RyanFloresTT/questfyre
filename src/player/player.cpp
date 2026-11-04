@@ -24,6 +24,10 @@ void Player::Update(const float dt) {
 
     position.x = Clamp(position.x, 0.f, static_cast<float>(GetScreenWidth()) - width);
     position.y = Clamp(position.y, 0.f, static_cast<float>(GetScreenHeight()) - height);
+
+    if (health <= 0) {
+        TraceLog(LOG_INFO, "Player Died");
+    }
 }
 
 void Player::Draw() const {

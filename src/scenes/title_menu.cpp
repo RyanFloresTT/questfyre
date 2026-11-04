@@ -6,18 +6,35 @@
 
 #include <format>
 
+
+Vector2 GetRandomBounds() {
+    return { 100, 100 };
+}
+
 void TitleMenu::Enter() {
     Scene::Enter();
 }
 
 void TitleMenu::Update(float dt) {
     player.Update(dt);
-    enemy.Update(dt);
+
+    for (auto& enemy : enemies) {
+        enemy.Update(dt);
+    }
+
+    spawn_progress += dt;
+    if (spawn_progress >= enemy_spawn_timer) {
+        enemies.emplace_back(assets, player, GetRandomBounds());
+        spawn_progress = 0.f;
+    }
 }
 
 void TitleMenu::Draw() {
     player.Draw();
-    enemy.Draw();
+
+    for (const auto& enemy : enemies) {
+        enemy.Draw();
+    }
 
     std::string label = std::format("Health: {}", player.Health());
     DrawText(label.c_str(), 10, 10, 20, BLACK);

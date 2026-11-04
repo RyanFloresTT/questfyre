@@ -9,7 +9,7 @@
 
 class TitleMenu : public Scene {
 public:
-    explicit TitleMenu(AssetStore& asset_store) : Scene(asset_store), player(assets), enemy(assets, player) {}
+    explicit TitleMenu(AssetStore& asset_store) : Scene(asset_store), player(assets) {}
 
     void Enter() override;
     void Update(float dt) override;
@@ -17,5 +17,7 @@ public:
 
 private:
     Player player;
-    Enemy enemy;
+    std::vector<Enemy> enemies;
+    float enemy_spawn_timer = 5.f;
+    float spawn_progress = 0.f;
 };
