@@ -10,8 +10,10 @@ void TitleMenu::Enter() {
 
 void TitleMenu::Update(float dt) {
     player.Update(dt);
+    enemy.Update(dt);
 }
 
 void TitleMenu::Draw() {
     player.Draw();
+    enemy.Draw();
 }

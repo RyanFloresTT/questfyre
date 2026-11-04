@@ -3,6 +3,10 @@
 
 #include <string_view>
 
+namespace Assets::Enemy {
+    inline constexpr std::string_view CYCLOPS = "assets/enemy/cyclops.png";
+}
+
 namespace Assets::Player {
     inline constexpr std::string_view DEFAULT = "assets/player/default.png";
 }

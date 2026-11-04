@@ -6,7 +6,7 @@
 #include "raymath.h"
 #include "../assets.h"
 
-Vector2 GetMovementDirection() {
+Vector2 Player::GetMovementDirection() {
     const float up = IsKeyDown(KEY_W) ? 1.f : 0.f;
     const float down = IsKeyDown(KEY_S) ? 1.f : 0.f;
     const float left = IsKeyDown(KEY_A) ? 1.f: 0.f;

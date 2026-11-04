@@ -25,7 +25,11 @@ add_executable(questfyre src/main.cpp
         src/scenes/title_menu.h
         src/scenes/title_menu.cpp
         src/player/player.cpp
-        src/player/player.h)
+        src/player/player.h
+        src/entity/entity.h
+        src/enemy/enemy.cpp
+        src/enemy/enemy.h
+)
 
 target_link_libraries(questfyre PRIVATE raylib lantern)
 

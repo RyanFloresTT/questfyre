@@ -3,12 +3,13 @@
 //
 #pragma once
 
+#include "../enemy/enemy.h"
 #include "../player/player.h"
 #include "lantern/scene/scene.h"
 
 class TitleMenu : public Scene {
 public:
-    explicit TitleMenu(AssetStore& asset_store) : Scene(asset_store), player(assets) {}
+    explicit TitleMenu(AssetStore& asset_store) : Scene(asset_store), player(assets), enemy(assets, player) {}
 
     void Enter() override;
     void Update(float dt) override;
@@ -16,4 +17,5 @@ public:
 
 private:
     Player player;
+    Enemy enemy;
 };
